@@ -1,0 +1,15 @@
+###\u670D\u52A1\u542F\u52A8\u7AEF\u53E3\u53F7
+server:
+  port: 8080
+spring:
+###\u6570\u636E\u5E93\u76F8\u5173\u8FDE\u63A5
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springboot-mayikt?useUnicode=true&characterEncoding=UTF-8
+####\u6253\u5370MyBatias\u65E5\u5FD7
+logging:
+  level:
+  ### \u5F00\u53D1\u73AF\u5883\u4F7F\u7528DEBUG \u751F\u4EA7\u73AF\u5883info\u6216\u8005error
+   com.mayikt.member.mapper: DEBUG
