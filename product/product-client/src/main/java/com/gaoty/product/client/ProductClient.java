@@ -13,6 +13,7 @@ import com.gaoty.product.common.ProductInfoOutput;
 import java.util.List;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @version V1.0
  * @since 2019-03-02 16:08
  */
-@FeignClient(name = "product" )
+@FeignClient(name = "product",fallback = ProductClient.ProductClientFallback.class)
 public interface ProductClient {
     /**
      * 获取商品列表(给订单服务用的)
@@ -36,4 +37,18 @@ public interface ProductClient {
 
     @PostMapping("/product/decreaseStock")
     void decreaseStock(@RequestBody List<DecreaseStockInput> cartDTOList);
+
+    @Component
+    static class ProductClientFallback implements ProductClient {
+
+        @Override
+        public List<ProductInfoOutput> listForOrder(List<String> productIdList) {
+            return null;
+        }
+
+        @Override
+        public void decreaseStock(List<DecreaseStockInput> decreaseStockInputList) {
+
+        }
+    }
 }

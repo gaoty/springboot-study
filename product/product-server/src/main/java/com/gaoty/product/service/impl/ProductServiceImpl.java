@@ -24,6 +24,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * TODO
@@ -37,6 +38,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private ProductInfoRepository productInfoRepository;
+
+    @Autowired
+    private RestTemplate restTemplate;
     @Override
     public List<ProductInfo> findUpAll() {
         return productInfoRepository.findByProductStatus(ProductStatusEnum.UP.getCode());
@@ -54,7 +58,6 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    @Transactional
     public void decreaseStock(List<DecreaseStockInput> cartDTOList) {
         for (DecreaseStockInput cartDTO:cartDTOList){
             Optional<ProductInfo> optionalProductInfo = productInfoRepository.findById(cartDTO.getProductId());

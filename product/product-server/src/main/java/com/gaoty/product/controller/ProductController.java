@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * TODO
@@ -46,6 +47,9 @@ public class ProductController {
 
     @Autowired
     private CategoryService categoryService;
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     @GetMapping("/list")
     public ResultVO<ProductVO> list() {
@@ -95,6 +99,16 @@ public class ProductController {
     @PostMapping("/decreaseStock")
     void decreaseStock(@RequestBody List<DecreaseStockInput> decreaseStockInputList){
         productService.decreaseStock(decreaseStockInputList);
+
+    }
+
+    @GetMapping("/decreaseStock1")
+    void decreaseStock1(){
+        System.out.println("商品服务：被订单服务调用，开始调用消息服务");
+        String url = "http://message/sendMessage";
+        restTemplate.getForObject(url, String.class);
+        System.out.println(" 商品服务：调用消息服务完成");
+
     }
 
 }
