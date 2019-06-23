@@ -30,6 +30,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.10</version>
+        </dependency>
 
 
     </dependencies>
@@ -48,6 +53,7 @@
         <module>springboot-eureka</module>
         <module>order</module>
         <module>product</module>
+        <module>spring5.0</module>
     </modules>
 
 </project>
