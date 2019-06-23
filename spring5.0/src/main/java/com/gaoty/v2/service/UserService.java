@@ -5,30 +5,22 @@
  * You shall not disclose such Confidential Information and shall use it only
  * in accordance with the terms of the license agreement you entered into with GuaHao.com.
  */
-package com.gaoty.v1.entity;
+package com.gaoty.v2.service;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Service;
 
 /**
+ * TODO
  *
  * @author gaoty
  * @version V1.0
- * @since 2019-06-23 11:22
+ * @since 2019-06-23 12:13
  */
-@Getter
-@Setter
-@ToString
-public class UserEntity {
-    private Integer userId;
-    private String userName;
-
-    public UserEntity(Integer userId, String userName) {
-        this.userId = userId;
-        this.userName = userName;
-    }
-
-    public UserEntity() {
+@Service
+@Lazy(true)
+public class UserService {
+    public UserService() {
+        System.out.println("UserService无参数构造被加载...");
     }
 }

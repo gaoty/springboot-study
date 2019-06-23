@@ -12,8 +12,7 @@ import com.gaoty.v1.entity.UserEntity;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * TODO
- *
+ * xml启动测试类
  * @author gaoty
  * @version V1.0
  * @since 2019-06-23 11:26

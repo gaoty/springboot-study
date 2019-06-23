@@ -5,30 +5,16 @@
  * You shall not disclose such Confidential Information and shall use it only
  * in accordance with the terms of the license agreement you entered into with GuaHao.com.
  */
-package com.gaoty.v1.entity;
+package com.gaoty.v2.controller;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import org.springframework.stereotype.Controller;
 
 /**
  *
  * @author gaoty
  * @version V1.0
- * @since 2019-06-23 11:22
+ * @since 2019-06-23 12:12
  */
-@Getter
-@Setter
-@ToString
-public class UserEntity {
-    private Integer userId;
-    private String userName;
-
-    public UserEntity(Integer userId, String userName) {
-        this.userId = userId;
-        this.userName = userName;
-    }
-
-    public UserEntity() {
-    }
+@Controller
+public class UserController {
 }

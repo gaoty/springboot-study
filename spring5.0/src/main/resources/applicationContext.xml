@@ -11,4 +11,10 @@
         <property name="userId" value="10"/>
         <property name="userName" value="mayikt"/>
     </bean>
+
+    <!--beanId相同时会报错-->
+    <bean id="userEntity" class="com.gaoty.v1.entity.UserEntity">
+        <property name="userId" value="10"/>
+        <property name="userName" value="mayikt"/>
+    </bean>
 </beans>
