@@ -20,6 +20,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class AliPayStrategy implements PayStrategy {
+    @Override
     public String toPayHtml() {
         return "调用支付宝支付接口...";
     }
