@@ -16,7 +16,7 @@ bin-release/
 ### Example user template template
 ### Example user template
 # IntelliJ project files
-.idea
+.idea/
 *.iml
 *.log
 out
