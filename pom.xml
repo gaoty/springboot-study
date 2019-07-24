@@ -54,6 +54,7 @@
         <module>order</module>
         <module>product</module>
         <module>spring5.0</module>
+        <module>handler</module>
     </modules>
 
 </project>
